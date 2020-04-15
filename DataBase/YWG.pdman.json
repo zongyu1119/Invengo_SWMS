@@ -1,0 +1,2388 @@
+{
+  "modules": [
+    {
+      "name": "WAREHOUSE",
+      "chnname": "仓库",
+      "entities": [
+        {
+          "title": "bc_warehouse",
+          "fields": [
+            {
+              "name": "warehouse_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "库房编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "warehouse_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "库房名称"
+            },
+            {
+              "name": "warehouse_father_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "上级库房编码"
+            },
+            {
+              "name": "warehouse_level",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "库房层级"
+            },
+            {
+              "name": "warehouse_state",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "状态"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "库房信息表",
+          "nameTemplate": "{code}-[{name}]",
+          "remark": "存储库房相关信息"
+        },
+        {
+          "title": "bc_supplier",
+          "fields": [
+            {
+              "name": "supplier_code",
+              "type": "IdOrKey",
+              "remark": "",
+              "chnname": "供应商编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "supplier_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "供应商名称"
+            },
+            {
+              "name": "supplier_real_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "开票公司名称"
+            },
+            {
+              "name": "supplier_tax_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "税号"
+            },
+            {
+              "name": "supplier_tax_rate",
+              "type": "Ratio",
+              "remark": "",
+              "chnname": "税率"
+            },
+            {
+              "name": "supplier_contacts",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "联系人"
+            },
+            {
+              "name": "supplier_phone",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "联系电话"
+            },
+            {
+              "name": "supplier_address",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "地址"
+            },
+            {
+              "name": "supplier_bank",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "开户行"
+            },
+            {
+              "name": "supplier_bank_account",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "银行账号"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "供应商信息表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_class",
+          "fields": [
+            {
+              "name": "class_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "类别编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "class_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "类别名称"
+            },
+            {
+              "name": "class_describe",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "类别描述"
+            },
+            {
+              "name": "class_father_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "上级类别"
+            },
+            {
+              "name": "class_level",
+              "type": "Integer",
+              "remark": "（用于区分每个层级类别的名称）",
+              "chnname": "类别等级"
+            },
+            {
+              "name": "class_state",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "状态"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "物料类别表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_product_material",
+          "fields": [
+            {
+              "name": "product_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "产品编码"
+            },
+            {
+              "name": "material_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "原料编码"
+            },
+            {
+              "name": "material_count",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "所需数量"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "产品原料对应表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_supplier_product",
+          "fields": [
+            {
+              "name": "product_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "物料编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "supplier_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "供应商编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "is_default",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "是否默认供应商"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "供应商物料对应表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_product_info",
+          "fields": [
+            {
+              "name": "product_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "物资编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "product_child_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "子物料编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "product_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "物资名称"
+            },
+            {
+              "name": "product_describe",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "物料描述"
+            },
+            {
+              "name": "product_specification",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "规格"
+            },
+            {
+              "name": "product_mode",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "型号"
+            },
+            {
+              "name": "product_unit",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "单位"
+            },
+            {
+              "name": "class_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "类别"
+            },
+            {
+              "name": "product_type",
+              "type": "Integer",
+              "remark": "（原料/半成品/产成品）",
+              "chnname": "物料类型"
+            },
+            {
+              "name": "product_warn_count",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "预警数量"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "物资信息表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "op_product",
+          "fields": [
+            {
+              "name": "product_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "物料编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "product_count",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "在库数量"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "库存表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "op_product_detail",
+          "fields": [
+            {
+              "name": "product_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "物料编码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "product_sn",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "物品序列号",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "product_state",
+              "type": "DefaultString",
+              "remark": "（在库/出库/借出/占用）",
+              "chnname": "状态"
+            },
+            {
+              "name": "product_price",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "单价"
+            },
+            {
+              "name": "supplier_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "供应商"
+            },
+            {
+              "name": "warehouse_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "所在库房"
+            },
+            {
+              "name": "warehouse_in_time",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "入库时间"
+            },
+            {
+              "name": "warehouse_out_time",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "出库时间"
+            },
+            {
+              "name": "warehouse_in_user_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "入库人"
+            },
+            {
+              "name": "warehouse_out_address",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "出库地点/人"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "库存明细表",
+          "nameTemplate": "{code}-[{name}]"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [
+          {
+            "shape": "table",
+            "title": "bc_supplier",
+            "moduleName": false,
+            "x": 700,
+            "y": 110,
+            "id": "196c6d51"
+          },
+          {
+            "shape": "table",
+            "title": "bc_product_info",
+            "moduleName": false,
+            "x": 350,
+            "y": 520,
+            "id": "4b3992d2",
+            "size": [
+              345.80521158827696,
+              218.5544058136718
+            ]
+          },
+          {
+            "shape": "table",
+            "title": "bc_class",
+            "moduleName": false,
+            "x": 310,
+            "y": 120,
+            "id": "e7a92bae",
+            "size": [
+              314.71067990267113,
+              165.70833333333331
+            ]
+          },
+          {
+            "shape": "table",
+            "title": "op_product_detail",
+            "moduleName": false,
+            "x": 790,
+            "y": 520,
+            "id": "6cca314b"
+          },
+          {
+            "shape": "table",
+            "title": "op_product",
+            "moduleName": false,
+            "x": 760,
+            "y": 360,
+            "id": "f4c77dd3"
+          },
+          {
+            "shape": "table",
+            "title": "bc_warehouse",
+            "moduleName": false,
+            "x": 1110,
+            "y": 130,
+            "id": "4e0daf1e"
+          }
+        ],
+        "edges": [
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "e7a92bae",
+            "target": "4b3992d2",
+            "id": "6b3948fb",
+            "controlPoints": [
+              {
+                "x": 126.14466004866443,
+                "y": 68.58308507454566
+              },
+              {
+                "x": 110,
+                "y": 70
+              },
+              {
+                "x": 110,
+                "y": 590
+              },
+              {
+                "x": 150.59739420586152,
+                "y": 584.160469039687
+              }
+            ],
+            "sourceAnchor": 0,
+            "targetAnchor": 14
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "4b3992d2",
+            "target": "6cca314b",
+            "id": "8b987688",
+            "controlPoints": [
+              {
+                "x": 549.4026057941385,
+                "y": 439.6600925545849
+              },
+              {
+                "x": 622.1083984375,
+                "y": 442.1630434782609
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 0
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "f4c77dd3",
+            "target": "4b3992d2",
+            "id": "24beda45",
+            "controlPoints": [
+              {
+                "x": 619.376953125,
+                "y": 362.5357142857143
+              },
+              {
+                "x": 550,
+                "y": 360
+              },
+              {
+                "x": 550,
+                "y": 390
+              },
+              {
+                "x": 130,
+                "y": 390
+              },
+              {
+                "x": 130,
+                "y": 440
+              },
+              {
+                "x": 150.59739420586152,
+                "y": 439.6600925545849
+              }
+            ],
+            "sourceAnchor": 0,
+            "targetAnchor": 0
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "4e0daf1e",
+            "target": "6cca314b",
+            "id": "80ec6339",
+            "controlPoints": [
+              {
+                "x": 931.2744140625,
+                "y": 102.28846153846153
+              },
+              {
+                "x": 910,
+                "y": 100
+              },
+              {
+                "x": 910,
+                "y": 220
+              },
+              {
+                "x": 1010,
+                "y": 220
+              },
+              {
+                "x": 1010,
+                "y": 540
+              },
+              {
+                "x": 957.8916015625,
+                "y": 542.5978260869565
+              }
+            ],
+            "sourceAnchor": 0,
+            "targetAnchor": 11
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "196c6d51",
+            "target": "6cca314b",
+            "id": "4e82292d",
+            "controlPoints": [
+              {
+                "x": 875.806640625,
+                "y": 32.16304347826087
+              },
+              {
+                "x": 890,
+                "y": 30
+              },
+              {
+                "x": 890,
+                "y": 240
+              },
+              {
+                "x": 990,
+                "y": 240
+              },
+              {
+                "x": 980,
+                "y": 520
+              },
+              {
+                "x": 957.8916015625,
+                "y": 522.5108695652174
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 9
+          }
+        ]
+      },
+      "associations": [
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_class",
+            "field": "class_code"
+          },
+          "to": {
+            "entity": "bc_product_info",
+            "field": "class_code"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_product_info",
+            "field": "product_code"
+          },
+          "to": {
+            "entity": "op_product_detail",
+            "field": "product_code"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "op_product",
+            "field": "product_code"
+          },
+          "to": {
+            "entity": "bc_product_info",
+            "field": "product_code"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_warehouse",
+            "field": "warehouse_code"
+          },
+          "to": {
+            "entity": "op_product_detail",
+            "field": "warehouse_code"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_supplier",
+            "field": "supplier_code"
+          },
+          "to": {
+            "entity": "op_product_detail",
+            "field": "supplier_code"
+          }
+        }
+      ]
+    },
+    {
+      "name": "USER",
+      "chnname": "用户模块",
+      "entities": [
+        {
+          "title": "bc_user",
+          "fields": [
+            {
+              "name": "user_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "user_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户登录名"
+            },
+            {
+              "name": "user_password",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户登录密码"
+            },
+            {
+              "name": "major_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户角色"
+            },
+            {
+              "name": "user_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户真实姓名"
+            },
+            {
+              "name": "department_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户部门"
+            },
+            {
+              "name": "user_phone",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "用户电话"
+            },
+            {
+              "name": "user_father_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "直属领导"
+            },
+            {
+              "name": "user_state",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "用户状态"
+            },
+            {
+              "name": "user_job",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "职务（是否管理）"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "用户表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_department",
+          "fields": [
+            {
+              "name": "department_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "部门ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "department_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "部门名称"
+            },
+            {
+              "name": "department_describe",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "部门描述"
+            },
+            {
+              "name": "department_father_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "上级部门"
+            },
+            {
+              "name": "department_level",
+              "type": "Integer",
+              "remark": "（为了区别每个级别部门的等级，用此来区分多级公司和部门）",
+              "chnname": "部门级别"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "部门表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_major_power",
+          "fields": [
+            {
+              "name": "major_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "角色ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "power_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "权限ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "is_insert",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "允许新建"
+            },
+            {
+              "name": "is_select",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "允许查看"
+            },
+            {
+              "name": "is_delete",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "允许删除"
+            },
+            {
+              "name": "is_update",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "允许修改"
+            },
+            {
+              "name": "is_approve",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "允许审核"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "角色权限中间表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_power",
+          "fields": [
+            {
+              "name": "power_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "权限ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "power_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "权限名称"
+            },
+            {
+              "name": "power_father_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "父权限ID"
+            },
+            {
+              "name": "power_level",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "权限层级"
+            },
+            {
+              "name": "power_describe",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "权限描述"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "权限表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "bc_major",
+          "fields": [
+            {
+              "name": "major_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "角色ID"
+            },
+            {
+              "name": "major_name",
+              "type": "Name",
+              "remark": "",
+              "chnname": "角色名称"
+            },
+            {
+              "name": "major_describe",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "角色描述"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "角色表",
+          "nameTemplate": "{code}-[{name}]"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [
+          {
+            "shape": "table",
+            "title": "bc_user",
+            "moduleName": false,
+            "x": 660,
+            "y": 210,
+            "id": "d8498804"
+          },
+          {
+            "shape": "table",
+            "title": "bc_major_power",
+            "moduleName": false,
+            "x": 660,
+            "y": 550,
+            "id": "4a04b01f"
+          },
+          {
+            "shape": "table",
+            "title": "bc_power",
+            "moduleName": false,
+            "x": 1000,
+            "y": 530,
+            "id": "2edcf049"
+          },
+          {
+            "shape": "table",
+            "title": "bc_major",
+            "moduleName": false,
+            "x": 340,
+            "y": 510,
+            "id": "bbf995cc"
+          },
+          {
+            "shape": "table",
+            "title": "bc_department",
+            "moduleName": false,
+            "x": 1030,
+            "y": 160,
+            "id": "bd15a487"
+          }
+        ],
+        "edges": [
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "d8498804",
+            "target": "bd15a487",
+            "id": "b712342b",
+            "controlPoints": [
+              {
+                "x": 817.69921875,
+                "y": 232.59782608695653
+              },
+              {
+                "x": 1220,
+                "y": 240
+              },
+              {
+                "x": 1220,
+                "y": 130
+              },
+              {
+                "x": 1180.0498046875,
+                "y": 132.28846153846155
+              }
+            ],
+            "sourceAnchor": 11,
+            "targetAnchor": 1
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "d8498804",
+            "target": "bbf995cc",
+            "id": "d453a35c",
+            "controlPoints": [
+              {
+                "x": 502.30078125,
+                "y": 192.42391304347825
+              },
+              {
+                "x": 170,
+                "y": 190
+              },
+              {
+                "x": 170,
+                "y": 500
+              },
+              {
+                "x": 222.9814453125,
+                "y": 502.4166666666667
+              }
+            ],
+            "sourceAnchor": 6,
+            "targetAnchor": 0
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "bbf995cc",
+            "target": "4a04b01f",
+            "id": "724acf9b",
+            "controlPoints": [
+              {
+                "x": 457.0185546875,
+                "y": 502.4166666666667
+              },
+              {
+                "x": 536.1357421875,
+                "y": 502.22058823529414
+              }
+            ],
+            "sourceAnchor": 1,
+            "targetAnchor": 0
+          },
+          {
+            "shape": "erdRelation",
+            "relation": "0,n:1",
+            "source": "4a04b01f",
+            "target": "2edcf049",
+            "id": "1422b558",
+            "controlPoints": [
+              {
+                "x": 783.8642578125,
+                "y": 522.3382352941177
+              },
+              {
+                "x": 830,
+                "y": 520
+              },
+              {
+                "x": 830,
+                "y": 500
+              },
+              {
+                "x": 863.9599609375,
+                "y": 502.28846153846155
+              }
+            ],
+            "sourceAnchor": 3,
+            "targetAnchor": 0
+          }
+        ]
+      },
+      "associations": [
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_user",
+            "field": "department_id"
+          },
+          "to": {
+            "entity": "bc_department",
+            "field": "department_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_user",
+            "field": "major_id"
+          },
+          "to": {
+            "entity": "bc_major",
+            "field": "major_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_major",
+            "field": "major_id"
+          },
+          "to": {
+            "entity": "bc_major_power",
+            "field": "major_id"
+          }
+        },
+        {
+          "relation": "0,n:1",
+          "from": {
+            "entity": "bc_major_power",
+            "field": "power_id"
+          },
+          "to": {
+            "entity": "bc_power",
+            "field": "power_id"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PROCESS",
+      "chnname": "流程",
+      "entities": [
+        {
+          "title": "bc_process",
+          "fields": [
+            {
+              "name": "process_code",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "流程代码",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "process_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "流程名称"
+            },
+            {
+              "name": "process_step",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "审批步骤（０－ｎ）",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "process_un_approve_step",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "不通过返回步骤（０－ｎ）"
+            },
+            {
+              "name": "process_un_approve_action",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "不通过操作（废弃／可重新编辑）"
+            },
+            {
+              "name": "approve_type",
+              "type": "Integer",
+              "remark": "人／部门／领导（区别由固定用户审批／某个部门领导审批／个人直接上级审批）",
+              "chnname": "审批代码"
+            },
+            {
+              "name": "approve_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "审批人／部门ID"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "流程表",
+          "nameTemplate": "{code}-[{name}]"
+        },
+        {
+          "title": "op_message",
+          "fields": [
+            {
+              "name": "message_id",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "消息ID",
+              "pk": true,
+              "notNull": true
+            },
+            {
+              "name": "message_title",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "消息标题"
+            },
+            {
+              "name": "message_src",
+              "type": "Intro",
+              "remark": "",
+              "chnname": "消息链接"
+            },
+            {
+              "name": "send_user",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "发起人"
+            },
+            {
+              "name": "receive_user",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "接收人"
+            },
+            {
+              "name": "create_time",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "发起时间"
+            },
+            {
+              "name": "message_tag",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "是否已查"
+            },
+            {
+              "name": "check_time",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "查看时间"
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "消息提醒表",
+          "nameTemplate": "{code}-[{name}]"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [],
+        "edges": []
+      },
+      "associations": []
+    }
+  ],
+  "dataTypeDomains": {
+    "datatype": [
+      {
+        "name": "默认字串",
+        "code": "DefaultString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(32)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "标识号",
+        "code": "IdOrKey",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "标识号-长",
+        "code": "LongKey",
+        "apply": {
+          "MYSQL": {
+            "type": "VARCHAR(64)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(64)"
+          },
+          "JAVA": {
+            "type": "String"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(64)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(64)"
+          }
+        }
+      },
+      {
+        "name": "名称",
+        "code": "Name",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(128)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(128)"
+          }
+        }
+      },
+      {
+        "name": "备注说明",
+        "code": "Intro",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(512)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(512)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(512)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(512)"
+          }
+        }
+      },
+      {
+        "name": "字串-短",
+        "code": "ShortString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(128)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(128)"
+          }
+        }
+      },
+      {
+        "name": "字串-中",
+        "code": "MiddleString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1024)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(1024)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(1024)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(1024)"
+          }
+        }
+      },
+      {
+        "name": "字串-长",
+        "code": "LongString",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(3072)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(3072)"
+          },
+          "SQLServer": {
+            "type": "NVARCHAR(3072)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(3072)"
+          }
+        }
+      },
+      {
+        "name": "大文本",
+        "code": "LongText",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "TEXT"
+          },
+          "ORACLE": {
+            "type": "CLOB"
+          },
+          "SQLServer": {
+            "type": "NTEXT"
+          },
+          "PostgreSQL": {
+            "type": "TEXT"
+          }
+        }
+      },
+      {
+        "name": "小数",
+        "code": "Double",
+        "apply": {
+          "JAVA": {
+            "type": "Double"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(32,10)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(32,10)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(32,10)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(32,10)"
+          }
+        }
+      },
+      {
+        "name": "比例",
+        "code": "Ratio",
+        "apply": {
+          "MYSQL": {
+            "type": "DECIMAL(4,2)"
+          },
+          "JAVA": {
+            "type": "Double"
+          },
+          "ORACLE": {
+            "type": "NUMBER(4,2)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(4,2)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(4,2)"
+          }
+        }
+      },
+      {
+        "name": "整数",
+        "code": "Integer",
+        "apply": {
+          "JAVA": {
+            "type": "Integer"
+          },
+          "MYSQL": {
+            "type": "INT"
+          },
+          "ORACLE": {
+            "type": "INT"
+          },
+          "SQLServer": {
+            "type": "INT"
+          },
+          "PostgreSQL": {
+            "type": "INT"
+          }
+        }
+      },
+      {
+        "name": "大整数",
+        "code": "BigInt",
+        "apply": {
+          "MYSQL": {
+            "type": "BIGINT"
+          },
+          "JAVA": {
+            "type": "Long"
+          },
+          "ORACLE": {
+            "type": "NUMBER"
+          },
+          "SQLServer": {
+            "type": "BIGINT"
+          },
+          "PostgreSQL": {
+            "type": "BIGINT"
+          }
+        }
+      },
+      {
+        "name": "金额",
+        "code": "Money",
+        "apply": {
+          "JAVA": {
+            "type": "Double"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(32,8)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(32,8)"
+          },
+          "SQLServer": {
+            "type": "DECIMAL(32,8)"
+          },
+          "PostgreSQL": {
+            "type": "DECIMAL(32,8)"
+          }
+        }
+      },
+      {
+        "name": "是否",
+        "code": "YesNo",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(1)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(1)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(1)"
+          }
+        }
+      },
+      {
+        "name": "数据字典",
+        "code": "Dict",
+        "apply": {
+          "JAVA": {
+            "type": "String"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "SQLServer": {
+            "type": "VARCHAR(32)"
+          },
+          "PostgreSQL": {
+            "type": "VARCHAR(32)"
+          }
+        }
+      },
+      {
+        "name": "日期",
+        "code": "Date",
+        "apply": {
+          "JAVA": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATE"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "SQLServer": {
+            "type": "DATE"
+          },
+          "PostgreSQL": {
+            "type": "DATE"
+          }
+        }
+      },
+      {
+        "name": "日期时间",
+        "code": "DateTime",
+        "apply": {
+          "JAVA": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATETIME"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "SQLServer": {
+            "type": "DATE"
+          },
+          "PostgreSQL": {
+            "type": "DATE"
+          }
+        }
+      },
+      {
+        "name": "单字符",
+        "code": "Char",
+        "apply": {
+          "MYSQL": {
+            "type": "CHAR(1)"
+          },
+          "ORACLE": {
+            "type": "CHAR(1)"
+          },
+          "JAVA": {
+            "type": "String"
+          },
+          "SQLServer": {
+            "type": "CHAR(1)"
+          },
+          "PostgreSQL": {
+            "type": "CHAR(1)"
+          }
+        }
+      }
+    ],
+    "database": [
+      {
+        "code": "MYSQL",
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.pk ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}'",
+        "fileShow": true,
+        "defaultDatabase": false,
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} {{= field.autoIncrement ? 'AUTO_INCREMENT' : '' }} {{= field.defaultValue ? it.func.join('DEFAULT',field.defaultValue,' ') : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,' ')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,' ') }}';{{=it.separator}}\n$blankline\n",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/",
+        "rebuildTableTemplate": "create table PDMAN_UP_{{=it.oldEntity.title}}\nas select * from {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}\n{{~it.newEntity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.newEntity.chnname,it.newEntity.remark,';') }}';{{=it.separator}}\n$blankline\n\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\ninsert into {{=it.newEntity.title}}(\n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\n) \nselect \n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\nfrom PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n{{~it.newEntity.indexs:index}}\nALTER TABLE {{=it.newEntity.title}} ADD {{? index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=index.name}}({{=it.func.join(...index.fields,',')}});{{=it.separator}}\n{{~}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.pk}}PRIMARY KEY{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}} {{? it.field.addAfter}}AFTER {{=it.field.addAfter}}{{?}};{{=it.separator}}",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}};{{=it.separator}}",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP {{=it.field.name}};{{=it.separator}}",
+        "deleteIndexTemplate": "ALTER TABLE {{=it.entity.title}} DROP INDEX {{=it.index.name}};{{=it.separator}}",
+        "createIndexTemplate": "ALTER TABLE {{=it.entity.title}} ADD {{? it.index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=it.index.name}}({{=it.func.join(...it.index.fields,',')}});{{=it.separator}}",
+        "updateTableComment": "ALTER TABLE {{=it.entity.title}} COMMENT '{{=it.entity.chnname}}';{{=it.separator}}"
+      },
+      {
+        "code": "ORACLE",
+        "template": "DROP TABLE {{=it.entity.title}};{{=it.separator}}\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}  {{= field.pk ? 'NOT NULL' : '' }} {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\nCOMMENT ON TABLE {{=it.entity.title}} IS '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}';{{=it.separator}}\n{{~it.entity.fields:field:index}}\nCOMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS '{{=it.func.join(field.chnname,field.remark,';')}}';{{=it.separator}}\n{{~}}",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\n{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~}}",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/\r\n$blankline",
+        "rebuildTableTemplate": "CREATE TABLE PDMAN_UP_{{=it.oldEntity.title}}\nAS SELECT * FROM {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\nDROP TABLE {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}{{~it.newEntity.fields:field:index}}{{? field.pk }}{{ pkList.push(field.name) }}{{?}}    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}{{? pkList.length >0 }}    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}}){{?}}\n);{{=it.separator}}\n$blankline\n{{? it.newEntity.chnname || it.newEntity.remark}}COMMENT ON TABLE {{=it.newEntity.title}} IS {{? it.newEntity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.newEntity.chnname}}'{{?}};{{?}}{{=it.separator}}\n{{~it.newEntity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.newEntity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{?}}{{=it.separator}}\n{{~}}\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\n$blankline\nINSERT INTO {{=it.newEntity.title}}(\n{{~sameCols:field:index}}   {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}) \nSELECT\n{{~sameCols:field:index}}   {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}FROM PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n\nDROP TABLE PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n{{~it.newEntity.indexs:index}}\nCREATE{{? index.isUnique}} UNIQUE{{?}} INDEX {{=index.name}} ON {{=it.newEntity.title}}({{=it.func.join(index.fields,',')}});{{=it.separator}}\n{{~}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD({{=it.field.name}} {{=it.field.type}}{{? it.field.defaultValue}} DEFAULT {{=it.field.defaultValue}}{{?}}{{? it.field.notNull}} NOT NULL{{?}});{{=it.separator}}\r\n{{? it.field.chnname || it.field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=it.field.name}} IS {{? it.field.remark}}'{{=it.field.remark}}'{{??}}'{{=it.field.chnname}}'{{?}};{{=it.separator}}{{?}}\r\n$blankline",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY({{=it.field.name}} {{=it.field.type}}{{? it.field.defaultValue}} DEFAULT {{=it.field.defaultValue}}{{?}}{{? it.field.notNull}} NOT NULL{{?}});{{=it.separator}}\r\n{{? it.field.chnname || it.field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=it.field.name}} IS {{? it.field.remark}}'{{=it.field.remark}}'{{??}}'{{=it.field.chnname}}'{{?}};{{=it.separator}}{{=it.separator}}{{?}}\r\n$blankline",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP({{=it.field.name}});{{=it.separator}}\r\n$blankline",
+        "deleteIndexTemplate": "DROP INDEX {{=it.entity.title}}.{{=it.index.name}};{{=it.separator}}\r\n$blankline",
+        "createIndexTemplate": "CREATE{{? it.index.isUnique}} UNIQUE{{?}} INDEX {{=it.index.name}} ON {{=it.entity.title}}({{=it.func.join(it.index.fields,',')}});{{=it.separator}}\r\n$blankline",
+        "updateTableComment": "{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\r\n$blankline"
+      },
+      {
+        "code": "SQLServer",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} {{= field.autoIncrement ? 'IDENTITY(1,1)' : '' }} {{= field.defaultValue ? it.func.join('DEFAULT',field.defaultValue,' ') : '' }}  {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    CONSTRAINT PK_{{=it.entity.title}} PRIMARY KEY CLUSTERED ({{~pkList:pkName:i}}{{= pkName }} ASC {{= i<pkList.length-1 ? ',' : '' }}{{~}}) ON [PRIMARY] \n{{?}}\n) ;{{=it.separator}}\n\n$blankline\nEXECUTE sp_addextendedproperty N'MS_Description', '{{= it.entity.chnname || it.entity.remark}}', N'user', N'dbo', N'table', N'{{=it.entity.title}}', NULL, NULL;{{=it.separator}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}EXECUTE sp_addextendedproperty N'MS_Description', {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}}, N'user', N'dbo', N'table', N'{{=it.entity.title}}', N'column', N'{{=field.name}}';{{=it.separator}}{{?}}\n{{~}}\n",
+        "deleteTableTemplate": "",
+        "rebuildTableTemplate": "",
+        "createFieldTemplate": "",
+        "updateFieldTemplate": "",
+        "deleteFieldTemplate": "",
+        "deleteIndexTemplate": "",
+        "createIndexTemplate": "",
+        "updateTableComment": ""
+      },
+      {
+        "code": "PostgreSQL",
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.pk ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}'",
+        "createTableTemplate": "CREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}{{? field.defaultValue}} DEFAULT {{=field.defaultValue}}{{?}}{{= field.notNull ? ' NOT NULL' : '' }}{{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);{{=it.separator}}\n$blankline\n{{? it.entity.chnname || it.entity.remark}}COMMENT ON TABLE {{=it.entity.title}} IS {{? it.entity.remark}}'{{=it.entity.remark}}'{{??}}'{{=it.entity.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~it.entity.fields:field:index}}\n{{? field.chnname || field.remark}}COMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS {{? field.remark}}'{{=field.remark}}'{{??}}'{{=field.chnname}}'{{?}};{{=it.separator}}{{?}}\n{{~}}",
+        "deleteTableTemplate": "DROP TABLE {{=it.entity.title}};{{=it.separator}}/*SkipError*/",
+        "rebuildTableTemplate": "create table PDMAN_UP_{{=it.oldEntity.title}}\nas select * from {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table {{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\nCREATE TABLE {{=it.newEntity.title}}(\n{{ pkList = [] ; }}\n{{~it.newEntity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.notNull ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.newEntity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.newEntity.chnname,it.newEntity.remark,';') }}';{{=it.separator}}\n$blankline\n\n{{ sameCols = it.func.intersect(it.newEntity.fields,it.oldEntity.fields) ;}}\ninsert into {{=it.newEntity.title}}(\n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\n) \nselect \n{{~sameCols:field:index}}\n    {{=field.name}}{{? index<sameCols.length-1}},{{?}}\n{{~}}\nfrom PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}\n$blankline\n\ndrop table PDMAN_UP_{{=it.oldEntity.title}};{{=it.separator}}",
+        "createFieldTemplate": "ALTER TABLE {{=it.entity.title}} ADD COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.pk}}PRIMARY KEY{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}} {{? it.field.addAfter}}AFTER {{=it.field.addAfter}}{{?}};{{=it.separator}}",
+        "updateFieldTemplate": "ALTER TABLE {{=it.entity.title}} MODIFY COLUMN {{=it.field.name}} {{=it.field.type}} {{? it.field.notNull}}NOT NULL{{?}} {{? it.field.defaultValue}}DEFAULT {{? null==it.field.defaultValue}}NULL{{??}}'{{=it.field.defaultValue}}'{{?}}{{?}} {{? it.field.autoIncrement}}AUTO_INCREMENT{{?}} {{? it.field.chnname}}COMMENT '{{=it.field.chnname}}'{{?}};{{=it.separator}}",
+        "deleteFieldTemplate": "ALTER TABLE {{=it.entity.title}} DROP {{=it.field.name}};{{=it.separator}}",
+        "deleteIndexTemplate": "ALTER TABLE {{=it.entity.title}} DROP INDEX {{=it.index.name}};{{=it.separator}}",
+        "createIndexTemplate": "ALTER TABLE {{=it.entity.title}} ADD {{? it.index.isUnique}}UNIQUE{{??}}INDEX{{?}} {{=it.index.name}}({{=it.func.join(...it.index.fields,',')}});{{=it.separator}}",
+        "updateTableComment": "ALTER TABLE {{=it.entity.title}} COMMENT '{{=it.entity.chnname}}';{{=it.separator}}"
+      },
+      {
+        "code": "JAVA",
+        "template": "package group.rober.pdman.{{=it.module.name}}.entity;\n$blankline\nimport javax.persistence.*;\nimport java.io.Serializable;\nimport java.util.Date;\n$blankline\n$blankline\n\n/** {{=it.entity.chnname}} */\n@Table(name=\"{{=it.entity.title}}\")\npublic class {{=it.func.camel(it.entity.title,true) }} implements Serializable,Cloneable{\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    {{? field.pk }}\n    @Id\n    @GeneratedValue\n    {{?}}\n    private {{=field.type}} {{=it.func.camel(field.name,false)}} ;\n{{~}}\n$blankline\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public {{=field.type}} get{{=it.func.camel(field.name,true)}}(){\n        return this.{{=it.func.camel(field.name,false)}};\n    }\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public void set{{=it.func.camel(field.name,true)}}({{=field.type}} {{= it.func.camel(field.name,false) }}){\n        this.{{=it.func.camel(field.name,false)}} = {{= it.func.camel(field.name,false) }};\n    }\n{{~}}\n}",
+        "createTableTemplate": "package group.rober.pdman.{{=it.module.name}}.entity;\n$blankline\nimport javax.persistence.*;\nimport java.io.Serializable;\nimport java.util.Date;\n$blankline\n$blankline\n@Table(name=\"{{=it.entity.title}}\")\npublic class {{=it.func.camel(it.entity.title,true) }} implements Serializable,Cloneable{\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    {{? field.pk }}\n    @Id\n    @GeneratedValue\n    {{?}}\n    private {{=field.type}} {{=it.func.camel(field.name,false)}} ;\n{{~}}\n$blankline\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public {{=field.type}} get{{=it.func.camel(field.name,true)}}(){\n        return this.{{=it.func.camel(field.name,false)}};\n    }\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public void set{{=it.func.camel(field.name,true)}}({{=field.type}} {{= it.func.camel(field.name,false) }}){\n        this.{{=it.func.camel(field.name,false)}} = {{= it.func.camel(field.name,false) }};\n    }\n{{~}}\n}",
+        "deleteTableTemplate": "",
+        "rebuildTableTemplate": "",
+        "createFieldTemplate": "",
+        "updateFieldTemplate": "",
+        "deleteFieldTemplate": "",
+        "deleteIndexTemplate": "",
+        "createIndexTemplate": "",
+        "updateTableComment": ""
+      },
+      {
+        "code": "C#",
+        "fileShow": true,
+        "defaultDatabase": true,
+        "createTableTemplate": "/// <summary>\n/// {{=it.func.join(it.entity.chnname,it.entity.remark,' ') }}\n/// </summary>\npublic class {{=it.entity.title}}{\n    {{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    /// <summary>\n    ///{{=it.func.join(field.chnname,field.remark,' ')}}\n    /// </summary>\n   public {{=field.type=='VARCHAR(32)'?'string':'int'}} {{=field.name}}   {get;set;}\n{{~}}\n{{? pkList.length >0 }}\n  \n{{?}}\n}\n\n$blankline\n"
+      }
+    ]
+  },
+  "profile": {
+    "defaultFields": [
+      {
+        "name": "untitled",
+        "type": "DefaultString",
+        "remark": "",
+        "chnname": ""
+      }
+    ],
+    "defaultFieldsType": "2"
+  }
+}
