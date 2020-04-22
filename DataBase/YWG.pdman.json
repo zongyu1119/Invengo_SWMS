@@ -1719,8 +1719,8 @@
             {
               "name": "process_un_approve_action",
               "type": "Integer",
-              "remark": "",
-              "chnname": "不通过操作（废弃／可重新编辑）"
+              "remark": "（废弃／可重新编辑）",
+              "chnname": "不通过操作"
             },
             {
               "name": "approve_type",
